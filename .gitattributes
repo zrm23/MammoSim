@@ -1,0 +1,23 @@
+# Normalizacion de saltos de linea
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.cs  text diff=csharp
+
+# Archivos YAML de Unity (texto, LF)
+*.unity  text eol=lf
+*.prefab text eol=lf
+*.asset  text eol=lf
+*.mat    text eol=lf
+*.anim   text eol=lf
+*.controller text eol=lf
+*.meta   text eol=lf
+
+# Git LFS para binarios pesados de Unity
+frontend/**/*.psd filter=lfs diff=lfs merge=lfs -text
+frontend/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+frontend/**/*.wav filter=lfs diff=lfs merge=lfs -text
+frontend/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+frontend/**/*.ogg filter=lfs diff=lfs merge=lfs -text
+frontend/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+frontend/**/*.mov filter=lfs diff=lfs merge=lfs -text

@@ -1,39 +1,65 @@
-.env 
+# ===== Secretos y entorno =====
+.env
 .env.*
 !.env.example
+*.pem
+*.key
 
-
-_pychache_/
+# ===== Python =====
+__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-
 .venv/
 venv/
 env/
-
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-
-
 .ipynb_checkpoints/
+.coverage
+coverage.xml
+htmlcov/
 
+# ===== Node (solo herramientas auxiliares) =====
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-dist/
-build/
-.next/
-.nuxt/
 coverage/
 
+# ===== Unity (frontend/) - los .meta SI se versionan =====
+frontend/[Ll]ibrary/
+frontend/[Tt]emp/
+frontend/[Oo]bj/
+frontend/[Bb]uild/
+frontend/[Bb]uilds/
+frontend/[Ll]ogs/
+frontend/[Uu]ser[Ss]ettings/
+frontend/[Mm]emoryCaptures/
+frontend/[Rr]ecordings/
+frontend/.vs/
+frontend/.gradle/
+frontend/*.csproj
+frontend/*.sln
+frontend/*.suo
+frontend/*.pidb
+frontend/*.unityproj
+frontend/*.pdb
+frontend/*.mdb
+frontend/*.opendb
+frontend/*.VC.db
+
+# ===== Builds y salidas generadas =====
+dist/
+build/
+site/
+
+# ===== ML: modelos y experimentos =====
 ml/modules/*
+!ml/modules/.gitkeep
 ml/experiments/*/outputs/
 ml/experiments/*/checkpoints/
-
 *.pt
 *.pth
 *.onnx
@@ -42,34 +68,125 @@ ml/experiments/*/checkpoints/
 *.pkl
 *.joblib
 
+# ===== Datos (nunca subir imagenes ni datos clinicos) =====
 data/raw/*
 data/processed/*
 data/external/*
-
-!data/README.modules
+!data/**/README.md
 !data/**/.gitkeep
+*.dcm
 
+# ===== Logs y bases de datos locales =====
 *.log
 logs/
-
 *.sqlite
 *.sqlite3
 *.db
 
-.vscode
-.idea
-
+# ===== Editores y sistema operativo =====
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
 
+# ===== Temporales =====
 *.tmp
 *.temp
 *.bak
 *.swp
+# ===== Secretos y entorno =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
 
-htmlcov/
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
 .coverage
 coverage.xml
+htmlcov/
 
+# ===== Node (solo herramientas auxiliares) =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+
+# ===== Unity (frontend/) - los .meta SI se versionan =====
+frontend/[Ll]ibrary/
+frontend/[Tt]emp/
+frontend/[Oo]bj/
+frontend/[Bb]uild/
+frontend/[Bb]uilds/
+frontend/[Ll]ogs/
+frontend/[Uu]ser[Ss]ettings/
+frontend/[Mm]emoryCaptures/
+frontend/[Rr]ecordings/
+frontend/.vs/
+frontend/.gradle/
+frontend/*.csproj
+frontend/*.sln
+frontend/*.suo
+frontend/*.pidb
+frontend/*.unityproj
+frontend/*.pdb
+frontend/*.mdb
+frontend/*.opendb
+frontend/*.VC.db
+
+# ===== Builds y salidas generadas =====
+dist/
+build/
 site/
+
+# ===== ML: modelos y experimentos =====
+ml/modules/*
+!ml/modules/.gitkeep
+ml/experiments/*/outputs/
+ml/experiments/*/checkpoints/
+*.pt
+*.pth
+*.onnx
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# ===== Datos (nunca subir imagenes ni datos clinicos) =====
+data/raw/*
+data/processed/*
+data/external/*
+!data/**/README.md
+!data/**/.gitkeep
+*.dcm
+
+# ===== Logs y bases de datos locales =====
+*.log
+logs/
+*.sqlite
+*.sqlite3
+*.db
+
+# ===== Editores y sistema operativo =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== Temporales =====
+*.tmp
+*.temp
+*.bak
+*.swp
