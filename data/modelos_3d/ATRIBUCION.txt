@@ -1,0 +1,17 @@
+Modelos 3D de MammoSim
+
+Estos modelos 3D son adaptaciones de Z-Anatomy.
+Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0
+Diseño, 3D y anatomía: Gauthier Kervyn
+Fuente: https://github.com/Z-Anatomy/Models-of-human-anatomy
+
+Z-Anatomy se basa en el modelo original BodyParts3D:
+BodyParts3D - The Database Center for Life Science -
+CC-BY-SA 2.1 Japón.
+
+Modificaciones: se extrajo una sola pieza (Mammary region.l) de la
+plantilla de Blender de Z-Anatomy y se exportó a formato glTF binario
+(.glb) con Blender 5.2.2, sin cambios en la malla.
+
+Licencia de estas adaptaciones: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0/
