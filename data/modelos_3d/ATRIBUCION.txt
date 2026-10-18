@@ -9,9 +9,11 @@ Z-Anatomy se basa en el modelo original BodyParts3D:
 BodyParts3D - The Database Center for Life Science -
 CC-BY-SA 2.1 Japón.
 
-Modificaciones: se extrajo una sola pieza (Mammary region.l) de la
-plantilla de Blender de Z-Anatomy y se exportó a formato glTF binario
-(.glb) con Blender 5.2.2, sin cambios en la malla.
+Modificaciones:  se extrajo una sola pieza (Mammary region.l) de la
+plantilla de Blender de Z-Anatomy, se le asignó un material de color
+a las caras del pezón y se añadió una esfera (Masa_caso_001, 2 cm de
+diámetro) en el cuadrante superior externo para representar la masa
+del caso 001. Se exportó a glTF binario (.glb) con Blender 5.2.2.
 
 Licencia de estas adaptaciones: CC BY-SA 4.0
 https://creativecommons.org/licenses/by-sa/4.0/
