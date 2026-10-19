@@ -9,11 +9,21 @@ Z-Anatomy se basa en el modelo original BodyParts3D:
 BodyParts3D - The Database Center for Life Science -
 CC-BY-SA 2.1 Japón.
 
-Modificaciones:  se extrajo una sola pieza (Mammary region.l) de la
-plantilla de Blender de Z-Anatomy, se le asignó un material de color
-a las caras del pezón y se añadió una esfera (Masa_caso_001, 2 cm de
-diámetro) en el cuadrante superior externo para representar la masa
-del caso 001. Se exportó a glTF binario (.glb) con Blender 5.2.2.
+Modificaciones por archivo:
+mama_caso_006.glb: se extrajo una sola pieza (Mammary region.l) de la
+plantilla de Blender de Z-Anatomy, se asignó un material de color a las
+caras del pezón y se añadió una esfera de 2 cm de diámetro para
+representar una masa redonda de borde nítido. La malla base no se
+modificó. Exportado a glTF binario (.glb) con Blender 5.2.2.
+
+Casos clínicos:
+Los casos de MammoSim se basan en descripciones de pacientes de CBIS-DDSM.
+Los modelos 3D solo ilustran esas descripciones; no incluyen ni derivan de
+las imágenes de esa colección.
+Sawyer-Lee, R., Gimenez, F., Hoogi, A., & Rubin, D. (2016). Curated Breast
+Imaging Subset of Digital Database for Screening Mammography (CBIS-DDSM)
+[Data set]. The Cancer Imaging Archive.
+https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY - CC BY 3.0
 
 Licencia de estas adaptaciones: CC BY-SA 4.0
 https://creativecommons.org/licenses/by-sa/4.0/
