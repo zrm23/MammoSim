@@ -10,11 +10,17 @@ BodyParts3D - The Database Center for Life Science -
 CC-BY-SA 2.1 Japón.
 
 Modificaciones por archivo:
-mama_caso_006.glb: se extrajo una sola pieza (Mammary region.l) de la
-plantilla de Blender de Z-Anatomy, se asignó un material de color a las
-caras del pezón y se añadió una esfera de 2 cm de diámetro para
-representar una masa redonda de borde nítido. La malla base no se
-modificó. Exportado a glTF binario (.glb) con Blender 5.2.2.
+-mama_caso_006.glb: se extrajo una sola pieza (Mammary region.l) de la
+    plantilla de Blender de Z-Anatomy, se asignó un material de color a las
+    caras del pezón y se añadió una esfera de 2 cm de diámetro para
+    representar una masa redonda de borde nítido. La malla base no se
+    modificó. Exportado a glTF binario (.glb) con Blender 5.2.2.
+
+- mama_caso_003.glb: se extrajo una sola pieza (Mammary region.l) de la
+    plantilla de Blender de Z-Anatomy, se asignó un material de color a las
+    caras del pezón y se añadió un elipsoide liso (3,3 x 2 x 1,62 cm) para
+    representar una masa ovalada de borde nítido. La malla base no se
+    modificó. Exportado a glTF binario (.glb) con Blender 5.2.2.
 
 Casos clínicos:
 Los casos de MammoSim se basan en descripciones de pacientes de CBIS-DDSM.
