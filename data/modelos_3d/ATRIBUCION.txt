@@ -1,26 +1,24 @@
 Modelos 3D de MammoSim
 
-Estos modelos 3D son adaptaciones de Z-Anatomy.
-Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0
-Diseño, 3D y anatomía: Gauthier Kervyn
-Fuente: https://github.com/Z-Anatomy/Models-of-human-anatomy
+Estos modelos 3D son adaptaciones de un modelo de terceros.
 
-Z-Anatomy se basa en el modelo original BodyParts3D:
-BodyParts3D - The Database Center for Life Science -
-CC-BY-SA 2.1 Japón.
+This work is based on "Human Female Breast Anatomy"
+(https://sketchfab.com/3d-models/human-female-breast-anatomy-e521ddef44924d67a612d41764779505)
+by Anatomy by Doctor Jana (https://sketchfab.com/docjana)
+licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+Modificaciones comunes a todos los archivos:
+- Se eliminaron las capas de conductos y de músculos.
+- La piel se volvió semitransparente (alpha 0,25) para ver el tejido interno.
+- Se quitó el mapa de relieve (normal) de las glándulas.
+- Se reescaló el modelo a su tamaño real (torso de unos 0,67 m).
+- Las texturas se exportaron en formato JPEG.
+- Se agregó una lesión según el caso clínico, con color rosado y brillo propio.
 
 Modificaciones por archivo:
--mama_caso_006.glb: se extrajo una sola pieza (Mammary region.l) de la
-    plantilla de Blender de Z-Anatomy, se asignó un material de color a las
-    caras del pezón y se añadió una esfera de 2 cm de diámetro para
-    representar una masa redonda de borde nítido. La malla base no se
-    modificó. Exportado a glTF binario (.glb) con Blender 5.2.2.
-
-- mama_caso_003.glb: se extrajo una sola pieza (Mammary region.l) de la
-    plantilla de Blender de Z-Anatomy, se asignó un material de color a las
-    caras del pezón y se añadió un elipsoide liso (3,3 x 2 x 1,62 cm) para
-    representar una masa ovalada de borde nítido. La malla base no se
-    modificó. Exportado a glTF binario (.glb) con Blender 5.2.2.
+- mama_caso_004.glb: mama derecha. Se agregó una masa ovalada
+  (2,4 x 1,6 x 1,8 cm) entre los lóbulos glandulares, que le tapan parte
+  del borde. Exportado con Blender 5.2.2.
 
 Casos clínicos:
 Los casos de MammoSim se basan en descripciones de pacientes de CBIS-DDSM.
@@ -31,5 +29,4 @@ Imaging Subset of Digital Database for Screening Mammography (CBIS-DDSM)
 [Data set]. The Cancer Imaging Archive.
 https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY - CC BY 3.0
 
-Licencia de estas adaptaciones: CC BY-SA 4.0
-https://creativecommons.org/licenses/by-sa/4.0/
+Licencia de estas adaptaciones: El modelo original permite modificarlo y compartirlo dando crédito.
