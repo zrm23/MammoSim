@@ -1,0 +1,49 @@
+.auth_page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+.auth {
+    justify-items: center;
+}
+
+.auth_welcome {
+    padding: 20px;
+    color: #fFFFFF;
+    align-items: center;
+}
+
+.auth_welcome h1{
+    color: #E6397E;
+}
+
+.auth_page_panel {
+    background-color: #fFFFFF;
+    padding: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.form_auth {
+    display: grid;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.form_auth input, .form_auth select {
+    padding: 10px;
+    border: none;
+    background-color: #D6DCE3;
+    border-radius: 5px;
+}
+
+.form_auth input {
+    border: #E6397E;
+}
+
+.auth_access {
+   width: 100%;
+   max-width:400px;
+}
+

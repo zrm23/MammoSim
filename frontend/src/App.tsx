@@ -1,11 +1,14 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
+import RegisterPage from './pages/RegisterPage'
 
 function App() {
 
   return (
-    <main>
-      <h1>MammoSimm</h1>
-    </main>
+    <Routes>
+      <Route path='/' element={<Navigate to="/login" replace />}/>
+      <Route path='/register' element={<RegisterPage/>}/>
+    </Routes>
   )
 }
 
