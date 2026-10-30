@@ -8,6 +8,11 @@
     justify-items: center;
 }
 
+.logo {
+    display: flex;
+    justify-self: center;
+}
+
 .auth_welcome {
     padding: 20px;
     color: #fFFFFF;
@@ -16,11 +21,12 @@
 
 .auth_welcome h1{
     color: #E6397E;
+    justify-self: center;
 }
 
 .auth_page_panel {
     background-color: #fFFFFF;
-    padding: 40px;
+    padding: 5px;
     display: grid;
     place-items: center;
 }
@@ -47,3 +53,14 @@
    max-width:400px;
 }
 
+.auth_link {
+    display: flex;
+    justify-content: center;
+}
+
+
+.auth_link a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #E6397E;
+}

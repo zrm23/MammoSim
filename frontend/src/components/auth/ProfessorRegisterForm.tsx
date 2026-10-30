@@ -72,7 +72,7 @@ export default function ProfessorForm() {
           Registrarse
         </button>
 
-        <p>¿Ya tienes una cuenta? <Link to="/auth">Inicia Sesión</Link></p>
+        <p className="auth_link">¿Ya tienes una cuenta? <Link to="/login">Inicia Sesión</Link></p>
       </form>
     </section>
   );

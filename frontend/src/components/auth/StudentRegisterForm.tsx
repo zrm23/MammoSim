@@ -90,7 +90,7 @@ export default function StudentForm() {
           required
         />
 
-        <label className="">
+        <label>
           <input
             type="checkbox"
             checked={aceptado}
@@ -118,7 +118,7 @@ export default function StudentForm() {
           Iniciar
         </button>
 
-        <p>¿Ya tienes una cuenta? <Link to="/auth">Inicia Sesión</Link></p>
+        <p className="auth_link">¿Ya tienes una cuenta? <Link to="/login">Inicia Sesión</Link></p>
       </form>
     </section>
   );
