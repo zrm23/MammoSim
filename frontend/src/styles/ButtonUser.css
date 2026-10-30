@@ -1,0 +1,20 @@
+.type_user {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: transparent;
+}
+
+.type_user_color {
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: 1px solid #FFC1DA;
+    background-color: #2c2c2c90;
+    color: #ffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.type_user_color[aria-pressed="true"] {
+    background-color: #E6397E;
+}
