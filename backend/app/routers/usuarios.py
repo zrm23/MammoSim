@@ -1,10 +1,11 @@
 """Endpoints 1 y 2: usuarios."""
+from datetime import datetime, timezone
+
 from fastapi import APIRouter, Depends, HTTPException
 
 from app.auth import UsuarioActual, get_token_data, get_usuario_actual
 from app.firebase import get_db
 from app.schemas import RegistroIn, RegistroOut, UsuarioOut
-from app.utils import pendiente
 
 router = APIRouter(tags=["usuarios"])
 
@@ -13,16 +14,53 @@ router = APIRouter(tags=["usuarios"])
 def registrar(
     datos: RegistroIn, token: dict = Depends(get_token_data), db=Depends(get_db)
 ):
-    """1. Crea usuarios/{uid}.
+    """1. Crea usuarios/{uid} la primera vez que alguien entra.
 
-    TODO:
-    - 422 si acepto_terminos es False.
-    - 409 si usuarios/{uid} ya existe.
-    - Rol: docente si el correo (en minúsculas) está en docentes_autorizados con
-      activo=True; si no, estudiante (con aviso si el correo es institucional).
-    - Guardar fecha_aceptacion y fecha_registro.
+    El uid y el correo salen del TOKEN (ya verificado), nunca del cuerpo de la
+    petición: así nadie puede registrarse a nombre de otro.
     """
-    pendiente()
+    # Validaciones: si algo no cumple, se corta aquí con un código de error.
+    if not datos.acepto_terminos:
+        raise HTTPException(422, "Debes aceptar el tratamiento de datos para registrarte")
+
+    uid = token["uid"]
+    correo = (token.get("email") or "").lower()
+    if not correo:
+        raise HTTPException(422, "La cuenta no tiene correo")
+
+    ref = db.collection("usuarios").document(uid)
+    if ref.get().exists:
+        raise HTTPException(409, "El usuario ya está registrado")
+
+    # El rol lo decide el servidor, no el cliente: docente solo si el correo
+    # está en docentes_autorizados (el ID del documento es el correo) y activo.
+    docente = db.collection("docentes_autorizados").document(correo).get()
+    es_docente = docente.exists and docente.to_dict().get("activo") is True
+    rol = "docente" if es_docente else "estudiante"
+
+    aviso = None
+    if rol == "estudiante" and correo.endswith("@usc.edu.co"):
+        aviso = (
+            "Tu correo es institucional pero no está en la lista de docentes "
+            "autorizados, así que quedaste registrado como estudiante."
+        )
+
+    # Se guarda el usuario. Los campos de rol y fechas los pone el servidor.
+    ahora = datetime.now(timezone.utc)
+    usuario = {
+        "id_usuario": uid,
+        "nombre_completo": datos.nombre_completo.strip(),
+        "correo": correo,
+        "rol": rol,
+        "carrera": datos.carrera,
+        "semestre": datos.semestre if rol == "estudiante" else None,
+        "acepto_terminos": True,
+        "fecha_aceptacion": ahora,
+        "fecha_registro": ahora,
+    }
+    ref.set(usuario)
+
+    return {"usuario": usuario, "aviso": aviso}
 
 
 @router.get("/usuarios/me", response_model=UsuarioOut)

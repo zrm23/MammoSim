@@ -65,7 +65,7 @@ def test_un_docente_no_entra_a_rutas_de_estudiante(cliente):
 
 def test_lo_pendiente_responde_501(cliente):
     c, _ = cliente
-    r = c.post("/sesiones", json={"id_curso": None, "casos": ["caso_001"]})
+    r = c.post("/sesiones/s1/cerrar")
     assert r.status_code == 501
 
 
