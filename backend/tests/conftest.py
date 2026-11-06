@@ -19,7 +19,8 @@ def casos() -> dict:
 
 # ---- Base de datos falsa mínima (sin Firebase) ----
 class _Doc:
-    def __init__(self, data):
+    def __init__(self, id_, data):
+        self.id = id_
         self._data = data
         self.exists = data is not None
 
@@ -27,21 +28,49 @@ class _Doc:
         return dict(self._data) if self._data is not None else None
 
 
-class _Coleccion:
-    def __init__(self, docs):
-        self._docs = docs
+class _Consulta:
+    """Lo que devuelve .where(): filtra por igualdad, como Firestore."""
 
-    def document(self, id_):
-        coleccion = self
+    def __init__(self, docs, filtros=(), limite=None):
+        self._docs, self._filtros, self._limite = docs, tuple(filtros), limite
 
-        class _Ref:
-            def get(self_inner):
-                return _Doc(coleccion._docs.get(id_))
+    def where(self, campo=None, op=None, valor=None, *, filter=None):
+        if filter is not None:  # FieldFilter de Firestore
+            campo, op, valor = filter.field_path, filter.op_string, filter.value
+        assert op == "==", "El FakeDb solo entiende filtros de igualdad"
+        return _Consulta(self._docs, self._filtros + ((campo, valor),), self._limite)
 
-        return _Ref()
+    def limit(self, n):
+        return _Consulta(self._docs, self._filtros, n)
 
     def stream(self):
-        return [_Doc(d) for d in self._docs.values()]
+        salida = [
+            _Doc(id_, d)
+            for id_, d in self._docs.items()
+            if all(d.get(campo) == valor for campo, valor in self._filtros)
+        ]
+        return salida[: self._limite] if self._limite else salida
+
+
+class _Coleccion(_Consulta):
+    def __init__(self, docs):
+        super().__init__(docs)
+
+    def document(self, id_=None):
+        coleccion = self
+        if id_ is None:  # ID automático, como en Firestore
+            id_ = f"auto_{len(coleccion._docs) + 1}"
+
+        class _Ref:
+            id = id_
+
+            def get(self_inner):
+                return _Doc(id_, coleccion._docs.get(id_))
+
+            def set(self_inner, datos):
+                coleccion._docs[id_] = dict(datos)
+
+        return _Ref()
 
 
 class FakeDb:
@@ -49,7 +78,7 @@ class FakeDb:
         self._datos = datos
 
     def collection(self, nombre):
-        return _Coleccion(self._datos.get(nombre, {}))
+        return _Coleccion(self._datos.setdefault(nombre, {}))
 
 
 @pytest.fixture
@@ -68,6 +97,7 @@ def cliente(casos):
             },
         }
     )
+    estado["db"] = db
     app.dependency_overrides[get_db] = lambda: db
     app.dependency_overrides[get_token_data] = lambda: {"uid": "uid_1", "email": "ana@correo.com"}
     app.dependency_overrides[get_usuario_actual] = lambda: UsuarioActual(
