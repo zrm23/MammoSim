@@ -75,3 +75,11 @@ def test_valida_el_cuerpo(cliente):
     r = c.post("/sesiones/s1/casos/caso_001/respuestas",
                json={"numero_pregunta": 9, "opcion_elegida": "A"})
     assert r.status_code == 422
+
+
+def test_listar_casos_sin_registrar_da_403(cliente):
+    c, estado = cliente
+    estado["rol"] = None  # tiene token pero aún no se registró
+    r = c.get("/casos")
+    assert r.status_code == 403
+    assert r.json()["detail"] == "Primero debes registrarte"

@@ -55,5 +55,14 @@ def requiere_rol(rol: str):
     return verificar
 
 
+def requiere_registrado(
+    usuario: UsuarioActual = Depends(get_usuario_actual),
+) -> UsuarioActual:
+    """Cualquier rol, pero la persona debe haberse registrado (rol distinto de None)."""
+    if usuario.rol is None:
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "Primero debes registrarte")
+    return usuario
+
+
 requiere_estudiante = requiere_rol("estudiante")
 requiere_docente = requiere_rol("docente")
