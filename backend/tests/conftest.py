@@ -38,6 +38,9 @@ class _Coleccion:
             def get(self_inner):
                 return _Doc(coleccion._docs.get(id_))
 
+            def set(self_inner, datos):
+                coleccion._docs[id_] = dict(datos)
+
         return _Ref()
 
     def stream(self):
@@ -49,7 +52,7 @@ class FakeDb:
         self._datos = datos
 
     def collection(self, nombre):
-        return _Coleccion(self._datos.get(nombre, {}))
+        return _Coleccion(self._datos.setdefault(nombre, {}))
 
 
 @pytest.fixture

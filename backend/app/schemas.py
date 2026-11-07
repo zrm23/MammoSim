@@ -2,7 +2,7 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 Decision = Literal["biopsiar", "seguimiento", "ignorar", "estudio_adicional"]
 Opcion = Literal["A", "B", "C", "D"]
@@ -12,8 +12,11 @@ EstadoSesion = Literal["en_curso", "completada"]
 
 # ---------- Usuarios ----------
 class RegistroIn(BaseModel):
+    # Se recortan los espacios ANTES de validar el largo mínimo.
+    model_config = ConfigDict(str_strip_whitespace=True)
+
     nombre_completo: str = Field(min_length=2)
-    carrera: str
+    carrera: str = Field(min_length=1)
     semestre: int | None = Field(default=None, ge=1, le=14)
     acepto_terminos: bool
 
