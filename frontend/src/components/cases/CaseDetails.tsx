@@ -1,41 +1,21 @@
 
 import type { clinicalCase } from "../../types/ClinicalCase";
 import "../../styles/CaseDetails.css";
-import { Unity, useUnityContext } from "react-unity-webgl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import UnitySimulation from "../simulation/UnitySimulation";
 
 type CaseDetailsProps = {
   clinicalCase: clinicalCase;
 };
 
-export default function CaseDetails({ clinicalCase }: CaseDetailsProps) {
+export default function CaseDetails({
+  clinicalCase,
+}: CaseDetailsProps) {
   const [started, setStarted] = useState(false);
-
-  const {
-    unityProvider,
-    isLoaded,
-    loadingProgression,
-    sendMessage,
-  } = useUnityContext({
-    loaderUrl: "/build/myunityapp.loader.js",
-    dataUrl: "/build/myunityapp.data",
-    frameworkUrl: "/build/myunityapp.framework.js",
-    codeUrl: "/build/myunityapp.wasm",
-  });
-
-  const startSimulation = () => {
-    setStarted(true);
-  };
-
-  useEffect(() => {
-    if (started && isLoaded) {
-      sendMessage("SimulationManager", "StartSimulation");
-    }
-  }, [started, isLoaded, sendMessage]);
 
   return (
     <aside className="detail_container">
-      <h2>{clinicalCase.clinical_id}</h2>
+      <h2>{clinicalCase.id}</h2>
       <h4>{clinicalCase.title}</h4>
 
       <img
@@ -49,30 +29,19 @@ export default function CaseDetails({ clinicalCase }: CaseDetailsProps) {
 
       <p>Objetivos de aprendizaje</p>
 
-      {!started && (
-        <button
-          type="button"
-          className="start_sim"
-          onClick={startSimulation}
-        >
-          <span>Iniciar Simulación</span>
-        </button>
-      )}
+      <button
+        type="button"
+        className="start_sim"
+        onClick={() => setStarted(true)}
+      >
+        <span>Iniciar Simulación</span>
+      </button>
 
       {started && (
-        <div className="simulation_container">
-          {!isLoaded && (
-            <p>
-              Cargando Simulación...
-              {Math.round(loadingProgression * 100)}%
-            </p>
-          )}
-
-          <Unity
-            unityProvider={unityProvider}
-            style={{ width: "100%", height: 600 }}
-          />
-        </div>
+        <UnitySimulation
+        caseId={clinicalCase.id}
+        onClose={() => setStarted(false)}
+      />
       )}
     </aside>
   );
