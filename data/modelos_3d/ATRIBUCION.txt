@@ -1,0 +1,31 @@
+Modelos 3D de MammoSim
+
+ATRIBUCIÓN DE LOS MODELOS 3D — MammoSim
+ 
+MODELO BASE
+Este trabajo se basa en "Human Female Breast Anatomy"
+(https://sketchfab.com/3d-models/human-female-breast-anatomy-e521ddef44924d67a612d41764779505)
+de Anatomy by Doctor Jana (https://sketchfab.com/docjana),
+licenciado bajo CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/).
+ 
+MODIFICACIONES COMUNES A TODOS LOS ARCHIVOS
+- Se conserva el modelo completo (piel, conductos, glándulas, músculos), dividido en una versión de mama izquierda y una de mama derecha.
+- Escala corregida a tamaño real (torso de aprox. 0,68 m).
+- Optimización de peso: eliminación de datos duplicados, texturas de color en JPEG (calidad 90) y cuantización de la geometría (KHR_mesh_quantization). Sin reducción de polígonos.
+- Se agregó una lesión sintética modelada en Blender según el caso clínico.
+ 
+ARCHIVOS
+mama_caso_001.glb  Mama izquierda. Masa irregular espiculada (cuerpo irregular con espículas cortas).
+mama_caso_002.glb  Mama derecha. Calcificaciones agrupadas pleomórficas (10 piezas pequeñas).
+mama_caso_003.glb  Mama izquierda. Masa oval lisa (aprox. 2,2 x 1,6 x 1,4 cm).
+mama_caso_004.glb  Mama derecha. Masa oval con borde parcialmente tapado por tejido denso (aprox. 2,4 x 1,8 x 1,6 cm).
+mama_caso_005.glb  Mama derecha. Calcificaciones dispersas con centro claro (8 anillos).
+mama_caso_006.glb  Mama izquierda. Masa redonda lisa (1,8 cm).
+mama_caso_007.glb  Mama izquierda. Masa lobulada (3 lóbulos lisos).
+ 
+DESCRIPCIÓN CLÍNICA DE LOS CASOS
+Basada en el dataset CBIS-DDSM (CC BY 3.0):
+Sawyer-Lee, R., Gimenez, F., Hoogi, A., & Rubin, D. (2016). Curated Breast Imaging Subset of Digital Database for Screening Mammography (CBIS-DDSM) [Data set]. The Cancer Imaging Archive. https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY
+Las lesiones 3D son representaciones esquemáticas, no se derivan de imágenes reales.
+
+Licencia de estas adaptaciones: El modelo original permite modificarlo y compartirlo dando crédito.

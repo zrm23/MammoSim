@@ -190,3 +190,5 @@ Thumbs.db
 *.temp
 *.bak
 *.swp
+*firebase-adminsdk*.json
+.env

@@ -1,0 +1,158 @@
+.guide_container{
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    align-self: center;
+}
+
+.guide_content{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.guide_main {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+    justify-items: center;
+}
+
+.tittle{
+    margin: 24px;
+    color: #ffffff;
+}
+
+.tutor_guide {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background: linear-gradient(180deg, #0B1230 9%,#223896 74% );
+    border-radius: 16px;
+    padding: 12px;
+    text-align: justify;
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+.tittle_bot {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    h2 {
+    text-align: left;
+    font-size: 2rem;
+    }
+    img {
+        width: 160px;
+        height: 130px;
+    }
+}
+
+/*Sección clasificación de Bi-rads*/
+.birads {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background: linear-gradient(90deg, #0B1230 5%,#223896 55% );
+    border-radius: 16px;
+    padding: 12px;
+    text-align: left;
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+/*Sección derecha de la guía*/
+.guide_right{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 24px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/*Aviso académico y legal*/
+.alert_container, .start_simulation_container {
+    margin: 0;
+    background: linear-gradient(180deg, #0B1230 9%,#223896 74% );
+    padding: 12px;
+    text-align: justify;
+    border: 1px solid #E8177B;
+    border-radius: 16px;
+}
+
+.alert_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-text-stroke: 0.3px #E8177B;
+    .icon {
+        color: #E6397E;
+        width: 80px;
+        height: 80px;
+        margin-top: 1rem;
+    }
+}
+
+/*Cómo iniciar una simulación pasos*/
+.start_simulation_container{
+    
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.how_to_start_content h2{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.how_to_start_content ol{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: justify;
+    padding-inline: 1.5rem;
+}
+
+.guide_cases_link{
+    display: flex;
+    width: min(100%, 210px);
+    box-sizing: border-box;
+    padding: 10px 12px;
+    justify-content: center;
+    margin-inline: auto;
+    background-color: #E6397E;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+
+/*Ajustar pantalla*/
+@media (max-width: 900px) {
+  .guide_container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tutor_guide p{
+    font-size: 1rem;
+  }
+  .tittle_bot {
+    display: flex;
+    flex-direction: column;
+    h2{
+    font-size: 1.2rem;
+  }
+  }
+  .alert_container h1{
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,915 @@
+{
+  "caso_001": {
+    "id_caso": "caso_001",
+    "titulo": "Caso 001 · Mamografía de mama izquierda",
+    "descripcion_breve": "Mujer de 62 años (edad simulada) con un estudio de mamografía de la mama izquierda, tomado de la base de datos pública CBIS-DDSM, con una anomalía focal registrada.",
+    "lado": "izquierda",
+    "vistas": [
+      "CC",
+      "MLO"
+    ],
+    "dificultad": "facil",
+    "edad_simulada": 62,
+    "modelo_3d_ref": "mama_caso_001",
+    "datos_estudio": [
+      "Mama: izquierda",
+      "Proyecciones: CC y MLO",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "En la lectura sistemática del estudio, ¿qué lateralidad corresponde a la anomalía anotada?",
+        "opciones": {
+          "A": "Derecha",
+          "B": "Izquierda",
+          "C": "Ambas",
+          "D": "No está especificado"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso el hallazgo está en la mama izquierda."
+      },
+      {
+        "numero": 2,
+        "enunciado": "Según la taxonomía de hallazgos mamográficos del dataset, ¿cuál es la clase de anomalía?",
+        "opciones": {
+          "A": "Calcificaciones",
+          "B": "Asimetría aislada",
+          "C": "Masa",
+          "D": "Distorsión sin masa identificada"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "Una masa es una lesión con volumen, visible en más de una proyección. Las calcificaciones, en cambio, son puntos blancos pequeños."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Qué descriptor de forma (shape) corresponde a la lesión focal registrada?",
+        "opciones": {
+          "A": "Ovalada",
+          "B": "Redonda",
+          "C": "Lobulada",
+          "D": "Irregular"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Irregular significa que el contorno de la masa no es redondo, ovalado ni lobulado: no sigue una forma regular."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Cuál es el descriptor de márgenes (mass margins) consignado para esta lesión?",
+        "opciones": {
+          "A": "Circunscritos",
+          "B": "Espiculados",
+          "C": "Oscurecidos",
+          "D": "Microlobulados"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "Espiculado significa que del borde de la masa salen proyecciones finas, como rayos. Es uno de los descriptores de margen, junto con circunscrito, oscurecido, microlobulado e indistinto."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué combinación de proyecciones estándar permite revisar el hallazgo en los registros seleccionados?",
+        "opciones": {
+          "A": "Solo CC",
+          "B": "Solo MLO",
+          "C": "CC y MLO",
+          "D": "Ninguna de las anteriores"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "El estudio estándar usa dos proyecciones: la craneocaudal (CC) y la mediolateral oblicua (MLO). Verlas juntas ayuda a localizar y describir la lesión."
+      },
+      {
+        "numero": 6,
+        "enunciado": "¿Cuál de los siguientes antecedentes NO puede incorporarse a la ficha clínica como hecho documentado?",
+        "opciones": {
+          "A": "Que el hallazgo está en la mama izquierda",
+          "B": "Que existen proyecciones CC y MLO",
+          "C": "Que presenta una masa irregular",
+          "D": "Que tiene antecedentes familiares de cáncer de mama"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Una ficha clínica solo debe incluir lo que está respaldado por los datos: el lado, las proyecciones y la descripción de la masa. Los antecedentes familiares no constan, así que no pueden darse como un hecho."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Qué categoría de evaluación BI-RADS (assessment) figura como referencia del caso?",
+        "opciones": {
+          "A": "BI-RADS 2",
+          "B": "BI-RADS 3",
+          "C": "BI-RADS 4",
+          "D": "BI-RADS 5"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "BI-RADS 5 significa altamente sugestivo de malignidad. Es la categoría de referencia de este caso."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      },
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      },
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      },
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      }
+    ],
+    "hallazgos": "Mamografía de mama izquierda (proyecciones CC y MLO). Tejido mamario con densidades fibroglandulares dispersas. Se observa una masa de forma irregular con bordes espiculados.",
+    "respuesta_correcta": "biopsiar",
+    "recomendacion_ia_correcta": "La masa presenta forma irregular y bordes espiculados, características muy sospechosas de malignidad; se recomienda biopsia guiada por imagen.",
+    "opcion_ia_incorrecta": "seguimiento",
+    "recomendacion_ia_incorrecta": "La masa podría corresponder a un cambio benigno; se recomienda control por imagen en 6 meses.",
+    "retroalimentacion": "Una masa irregular de bordes espiculados es una de las combinaciones más sugestivas de malignidad (BI-RADS 5), y la conducta es biopsia. El resultado de patología fue maligno.",
+    "fuente": "CBIS-DDSM, paciente P_00051 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  },
+  "caso_002": {
+    "id_caso": "caso_002",
+    "titulo": "Caso 002 · Mamografía de mama derecha",
+    "descripcion_breve": "Mujer de 54 años (edad simulada) con un estudio de mamografía de la mama derecha, tomado de la base de datos pública CBIS-DDSM, con tejido mamario extremadamente denso y una anomalía registrada.",
+    "lado": "derecha",
+    "vistas": [
+      "CC",
+      "MLO"
+    ],
+    "dificultad": "dificil",
+    "edad_simulada": 54,
+    "modelo_3d_ref": "mama_caso_002",
+    "datos_estudio": [
+      "Mama: derecha",
+      "Proyecciones: CC y MLO",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "¿Cuál es el tipo de anomalía (abnormality type) registrado en las anotaciones?",
+        "opciones": {
+          "A": "Masa ovalada",
+          "B": "Calcificaciones",
+          "C": "Quiste simple",
+          "D": "Distorsión arquitectural aislada"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "Las calcificaciones son depósitos de calcio que se ven como puntos blancos pequeños. Una masa, en cambio, es una lesión con volumen."
+      },
+      {
+        "numero": 2,
+        "enunciado": "¿Qué lateralidad mamaria está asociada a las calcificaciones descritas?",
+        "opciones": {
+          "A": "Izquierda",
+          "B": "Bilateral",
+          "C": "Derecha",
+          "D": "No registrada"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso las calcificaciones están en la mama derecha."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Qué descriptor morfológico de calcificaciones (calc type) figura en el registro?",
+        "opciones": {
+          "A": "Pleomórficas",
+          "B": "Redondas uniformes",
+          "C": "En anillo",
+          "D": "Vasculares"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "Pleomórficas significa de formas y tamaños variables. Es uno de los descriptores de morfología de las calcificaciones."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Qué patrón de distribución de las calcificaciones (calc distribution) está codificado?",
+        "opciones": {
+          "A": "Lineal",
+          "B": "Segmentaria",
+          "C": "Difusa",
+          "D": "Agrupada"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Agrupada significa varias calcificaciones juntas en un área pequeña. Es distinta de la distribución lineal, segmentaria o difusa."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué valor de densidad mamaria (breast density) figura en el registro de este caso?",
+        "opciones": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "4"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "El dataset codifica la densidad mamaria del 1 al 4; en este caso el valor registrado es 4, el más alto de la escala. Un tejido más denso puede ocultar lesiones."
+      },
+      {
+        "numero": 6,
+        "enunciado": "¿Cuál de los siguientes datos clínicos carece de trazabilidad en el dataset y no debe presentarse como antecedente real?",
+        "opciones": {
+          "A": "La proyección CC",
+          "B": "La proyección MLO",
+          "C": "La presencia de calcificaciones pleomórficas",
+          "D": "La existencia de secreción por el pezón"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "La secreción por el pezón no figura en el dataset, así que no puede presentarse como un dato real. Sí están documentadas las proyecciones y las calcificaciones."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Qué categoría BI-RADS de evaluación inicial está anotada en la fuente?",
+        "opciones": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "5"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "BI-RADS 4 significa hallazgo sospechoso, en el que se considera la biopsia para obtener un diagnóstico por patología."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      },
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      },
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      },
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      }
+    ],
+    "hallazgos": "Mamografía de mama derecha (proyecciones CC y MLO). Tejido mamario extremadamente denso. Se observa un grupo de calcificaciones pequeñas, de formas y tamaños variables, agrupadas en una zona reducida.",
+    "respuesta_correcta": "biopsiar",
+    "recomendacion_ia_correcta": "Las calcificaciones pleomórficas agrupadas son una morfología sospechosa; se recomienda biopsia para obtener un diagnóstico por patología.",
+    "opcion_ia_incorrecta": "estudio_adicional",
+    "recomendacion_ia_incorrecta": "Antes de definir una conducta conviene caracterizar mejor las calcificaciones con magnificación y estudios complementarios.",
+    "retroalimentacion": "Las calcificaciones pleomórficas agrupadas se clasifican como sospechosas (BI-RADS 4) y requieren biopsia para confirmar el diagnóstico. El resultado de patología fue maligno.",
+    "fuente": "CBIS-DDSM, paciente P_00049 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  },
+  "caso_003": {
+    "id_caso": "caso_003",
+    "titulo": "Caso 003 · Mamografía de mama izquierda",
+    "descripcion_breve": "Mujer de 46 años (edad simulada) con un estudio de mamografía de la mama izquierda, tomado de la base de datos pública CBIS-DDSM, con una anomalía focal registrada.",
+    "lado": "izquierda",
+    "vistas": [
+      "CC",
+      "MLO"
+    ],
+    "dificultad": "medio",
+    "edad_simulada": 46,
+    "modelo_3d_ref": "mama_caso_003",
+    "datos_estudio": [
+      "Mama: izquierda",
+      "Proyecciones: CC y MLO",
+      "Densidad mamaria (escala del dataset, de 1 a 4): 2",
+      "Resultado patológico: se revela al final de la simulación",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "En el esquema de clasificación del dataset, ¿cuál es el tipo de hallazgo anotado?",
+        "opciones": {
+          "A": "Calcificaciones",
+          "B": "Masa",
+          "C": "Asimetría global",
+          "D": "Distorsión arquitectural"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "Una masa es una lesión con volumen, visible en más de una proyección. Las calcificaciones son puntos blancos pequeños."
+      },
+      {
+        "numero": 2,
+        "enunciado": "¿Cuál es la lateralidad del hallazgo mamográfico seleccionado?",
+        "opciones": {
+          "A": "Derecha",
+          "B": "Bilateral",
+          "C": "Izquierda",
+          "D": "No documentada"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso el hallazgo está en la mama izquierda."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Qué descriptor de forma de masa se encuentra documentado?",
+        "opciones": {
+          "A": "Ovalada",
+          "B": "Irregular",
+          "C": "Lobulada",
+          "D": "Redonda"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "Ovalada significa con forma de huevo: más larga que ancha y de contorno suave."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Qué descriptor de márgenes se encuentra documentado?",
+        "opciones": {
+          "A": "Espiculados",
+          "B": "Oscurecidos",
+          "C": "Indistintos",
+          "D": "Circunscritos"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Circunscrito significa de borde liso y nítido, bien separado del tejido que lo rodea."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué proyecciones mamográficas constan para la anomalía seleccionada?",
+        "opciones": {
+          "A": "Solo CC",
+          "B": "CC y MLO",
+          "C": "Solo MLO",
+          "D": "Ninguna"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "El estudio estándar usa dos proyecciones: la craneocaudal (CC) y la mediolateral oblicua (MLO). En este caso constan ambas."
+      },
+      {
+        "numero": 6,
+        "enunciado": "¿Qué variable clínica no se encuentra respaldada por los archivos disponibles?",
+        "opciones": {
+          "A": "Densidad mamaria",
+          "B": "Antecedentes personales",
+          "C": "Forma de la masa",
+          "D": "Resultado patológico"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "Los antecedentes personales no aparecen en los archivos del caso, mientras que la densidad y la forma de la masa sí constan. Un dato sin respaldo no debe presentarse como un hecho."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Qué evaluación BI-RADS está consignada en la anotación original?",
+        "opciones": {
+          "A": "0",
+          "B": "2",
+          "C": "3",
+          "D": "5"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "BI-RADS 3 significa probablemente benigno: se maneja con seguimiento por imagen a corto plazo."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      },
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      },
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      },
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      }
+    ],
+    "hallazgos": "Mamografía de mama izquierda (proyecciones CC y MLO). Tejido mamario con densidades fibroglandulares dispersas. Se observa una masa de forma ovalada con bordes bien definidos.",
+    "respuesta_correcta": "seguimiento",
+    "recomendacion_ia_correcta": "La masa ovalada de bordes bien definidos tiene características probablemente benignas; se recomienda control por imagen a corto plazo (6 meses).",
+    "opcion_ia_incorrecta": "biopsiar",
+    "recomendacion_ia_incorrecta": "Para descartar malignidad con certeza se recomienda biopsia guiada por imagen de la masa.",
+    "retroalimentacion": "Una masa ovalada de bordes bien definidos es probablemente benigna (BI-RADS 3): la conducta es un seguimiento a corto plazo y no una biopsia. En este caso, la patología confirmó que era benigna.",
+    "fuente": "CBIS-DDSM, paciente P_00351 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  },
+  "caso_004": {
+    "id_caso": "caso_004",
+    "titulo": "Caso 004 · Mamografía de mama derecha",
+    "descripcion_breve": "Mujer de 51 años (edad simulada) con un estudio de mamografía de la mama derecha, tomado de la base de datos pública CBIS-DDSM, con una anomalía focal registrada.",
+    "lado": "derecha",
+    "vistas": [
+      "CC",
+      "MLO"
+    ],
+    "dificultad": "dificil",
+    "edad_simulada": 51,
+    "modelo_3d_ref": "mama_caso_004",
+    "datos_estudio": [
+      "Mama: derecha",
+      "Proyecciones: CC y MLO",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "¿Cuál es la lateralidad del hallazgo en la serie seleccionada?",
+        "opciones": {
+          "A": "Izquierda",
+          "B": "Derecha",
+          "C": "Ambas",
+          "D": "No especificada"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso el hallazgo está en la mama derecha."
+      },
+      {
+        "numero": 2,
+        "enunciado": "¿Cuál es el tipo de anomalía registrado en el dataset?",
+        "opciones": {
+          "A": "Masa",
+          "B": "Calcificaciones",
+          "C": "Distorsión arquitectural aislada",
+          "D": "Asimetría global"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "Una masa es una lesión con volumen, visible en más de una proyección. Las calcificaciones son puntos blancos pequeños."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Qué descriptor de forma corresponde a esta masa?",
+        "opciones": {
+          "A": "Redonda",
+          "B": "Irregular",
+          "C": "Ovalada",
+          "D": "Lobulada"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "Ovalada significa con forma de huevo: más larga que ancha y de contorno suave."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Qué descriptor de margen está codificado en el registro?",
+        "opciones": {
+          "A": "Espiculados",
+          "B": "Circunscritos",
+          "C": "Microlobulados",
+          "D": "Oscurecidos"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Oscurecido significa que el tejido de alrededor tapa parte del borde de la masa, por lo que el borde no se ve completo."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué proyecciones mamográficas constan para la anomalía seleccionada?",
+        "opciones": {
+          "A": "Solo MLO",
+          "B": "Solo CC",
+          "C": "Ninguna",
+          "D": "CC y MLO"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "El estudio estándar usa dos proyecciones: la craneocaudal (CC) y la mediolateral oblicua (MLO). En este caso constan ambas."
+      },
+      {
+        "numero": 6,
+        "enunciado": "Con solo esta mamografía, ¿se puede estimar cuánto tiempo lleva creciendo la masa?",
+        "opciones": {
+          "A": "Sí, unos 8 meses, por su forma ovalada",
+          "B": "Sí, es reciente porque se ve pequeña",
+          "C": "No: una sola imagen no permite fecharla, haría falta compararla con estudios previos",
+          "D": "Sí, el borde indica cuánto tiempo lleva"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "Una mamografía es una imagen de un solo momento: no permite saber cuánto tiempo lleva una lesión ni a qué velocidad crece. Para eso se compara con estudios previos de la paciente."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Cuál es la categoría BI-RADS registrada para esta evaluación?",
+        "opciones": {
+          "A": "0",
+          "B": "2",
+          "C": "3",
+          "D": "5"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "En este caso la categoría registrada es BI-RADS 0, es decir, evaluación incompleta."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      },
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      },
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      },
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      }
+    ],
+    "hallazgos": "Mamografía de mama derecha (proyecciones CC y MLO). Tejido mamario con densidades fibroglandulares dispersas. Se observa una masa de forma ovalada cuyos bordes aparecen parcialmente ocultos por el tejido vecino.",
+    "respuesta_correcta": "estudio_adicional",
+    "recomendacion_ia_correcta": "Los bordes de la masa están parcialmente obscurecidos por el tejido adyacente y no permiten una valoración completa; se recomienda completar con estudios de imagen adicionales, como proyecciones focalizadas o ecografía.",
+    "opcion_ia_incorrecta": "ignorar",
+    "recomendacion_ia_incorrecta": "No se observan hallazgos que requieran más estudios; puede continuar con su control de rutina.",
+    "retroalimentacion": "BI-RADS 0 significa evaluación incompleta: con la imagen disponible no se puede concluir, así que se piden estudios adicionales antes de decidir. En este caso, el estudio posterior mostró que era benigna.",
+    "fuente": "CBIS-DDSM, paciente P_00333 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  },
+  "caso_005": {
+    "id_caso": "caso_005",
+    "titulo": "Caso 005 · Mamografía de mama derecha",
+    "descripcion_breve": "Mujer de 58 años (edad simulada) con un estudio de mamografía de la mama derecha, tomado de la base de datos pública CBIS-DDSM, con tejido mamario extremadamente denso y una anomalía registrada.",
+    "lado": "derecha",
+    "vistas": [
+      "CC",
+      "MLO"
+    ],
+    "dificultad": "medio",
+    "edad_simulada": 58,
+    "modelo_3d_ref": "mama_caso_005",
+    "datos_estudio": [
+      "Mama: derecha",
+      "Proyecciones: CC y MLO",
+      "Distribución de las calcificaciones: no incluida en el registro del caso",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "¿Qué tipo de anomalía mamográfica está codificada para el caso?",
+        "opciones": {
+          "A": "Masa irregular",
+          "B": "Distorsión arquitectural",
+          "C": "Calcificaciones",
+          "D": "Asimetría focal"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "Las calcificaciones son depósitos de calcio que se ven como puntos blancos pequeños. Una masa, en cambio, es una lesión con volumen."
+      },
+      {
+        "numero": 2,
+        "enunciado": "¿Cuál es la lateralidad del registro de calcificaciones?",
+        "opciones": {
+          "A": "Derecha",
+          "B": "Izquierda",
+          "C": "Ambas",
+          "D": "No registrada"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso las calcificaciones están en la mama derecha."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Qué descriptor morfológico (calc type) está consignado?",
+        "opciones": {
+          "A": "Pleomórficas",
+          "B": "Amorfas",
+          "C": "Lineales finas",
+          "D": "Con centro radiolúcido"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Centro radiolúcido significa que cada calcificación es redondeada y tiene el centro más claro que el borde, como un pequeño anillo."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Qué proyecciones están disponibles en los registros del caso?",
+        "opciones": {
+          "A": "Solo CC",
+          "B": "CC y MLO",
+          "C": "Solo MLO",
+          "D": "Ninguna"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "El estudio estándar usa dos proyecciones: la craneocaudal (CC) y la mediolateral oblicua (MLO). En este caso constan ambas."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué valor de densidad mamaria se consigna para el estudio?",
+        "opciones": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "4"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "El dataset codifica la densidad mamaria del 1 al 4; en este caso el valor registrado es 4, el más alto de la escala. Un tejido más denso puede ocultar lesiones."
+      },
+      {
+        "numero": 6,
+        "enunciado": "¿Qué valor aparece en el campo de distribución de calcificaciones (calc distribution)?",
+        "opciones": {
+          "A": "CLUSTERED",
+          "B": "SEGMENTAL",
+          "C": "LINEAR",
+          "D": "N/A"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "En este caso el dataset no registra un patrón de distribución (N/A). Una característica que no está documentada no debe suponerse."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Cuál es la categoría de evaluación BI-RADS registrada?",
+        "opciones": {
+          "A": "0",
+          "B": "1",
+          "C": "2",
+          "D": "5"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "BI-RADS 2 significa hallazgo benigno, sin necesidad de estudios adicionales."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      },
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      },
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      },
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      }
+    ],
+    "hallazgos": "Mamografía de mama derecha (proyecciones CC y MLO). Tejido mamario extremadamente denso. Se observan calcificaciones redondeadas con el centro más claro.",
+    "respuesta_correcta": "ignorar",
+    "recomendacion_ia_correcta": "Las calcificaciones con centro claro son un patrón típicamente benigno; no requieren estudios adicionales y puede continuar con su tamizaje de rutina.",
+    "opcion_ia_incorrecta": "estudio_adicional",
+    "recomendacion_ia_incorrecta": "Para caracterizar mejor las calcificaciones conviene ampliarlas con magnificación antes de concluir.",
+    "retroalimentacion": "Las calcificaciones de centro claro son un patrón benigno típico (BI-RADS 2) y no necesitan más estudios. El hallazgo se clasificó como benigno sin necesidad de volver a citar a la paciente.",
+    "fuente": "CBIS-DDSM, paciente P_00744 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  },
+  "caso_006": {
+    "id_caso": "caso_006",
+    "titulo": "Caso 006 · Mamografía de mama izquierda",
+    "descripcion_breve": "Mujer de 65 años (edad simulada) con un estudio de mamografía de la mama izquierda, tomado de la base de datos pública CBIS-DDSM, con una anomalía focal registrada.",
+    "lado": "izquierda",
+    "vistas": [
+      "MLO"
+    ],
+    "dificultad": "facil",
+    "edad_simulada": 65,
+    "modelo_3d_ref": "mama_caso_006",
+    "datos_estudio": [
+      "Mama: izquierda",
+      "Proyecciones: MLO",
+      "Antecedentes y síntomas: no documentados en el registro",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "¿Qué clase de anomalía está registrada en el archivo de masas?",
+        "opciones": {
+          "A": "Calcificaciones",
+          "B": "Masa",
+          "C": "Distorsión arquitectural",
+          "D": "Asimetría global"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "Una masa es una lesión con volumen, visible en más de una proyección. Las calcificaciones son puntos blancos pequeños."
+      },
+      {
+        "numero": 2,
+        "enunciado": "¿Qué lateralidad corresponde a la anomalía seleccionada?",
+        "opciones": {
+          "A": "Derecha",
+          "B": "Bilateral",
+          "C": "No documentada",
+          "D": "Izquierda"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso el hallazgo está en la mama izquierda."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Qué descriptor de forma (mass shape) aparece en la anotación?",
+        "opciones": {
+          "A": "Redonda",
+          "B": "Ovalada",
+          "C": "Irregular",
+          "D": "Lobulada"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "Redonda significa con forma de esfera: tan ancha como larga, de contorno uniforme."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Qué descriptor de márgenes (mass margins) aparece en la anotación?",
+        "opciones": {
+          "A": "Espiculados",
+          "B": "Oscurecidos",
+          "C": "Circunscritos",
+          "D": "Indistintos"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "Circunscrito significa de borde liso y nítido, bien separado del tejido que lo rodea."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué proyección mamográfica está efectivamente documentada en los registros seleccionados?",
+        "opciones": {
+          "A": "CC únicamente",
+          "B": "MLO únicamente",
+          "C": "CC y MLO",
+          "D": "Ninguna"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "En este caso solo está documentada la proyección mediolateral oblicua (MLO). No se puede afirmar que se hayan comparado CC y MLO."
+      },
+      {
+        "numero": 6,
+        "enunciado": "La paciente tiene 65 años (edad simulada). ¿Esa edad basta para anticipar el diagnóstico del caso?",
+        "opciones": {
+          "A": "Sí, a los 65 años la masa debe ser maligna",
+          "B": "No: la edad es un factor de riesgo, pero no define el diagnóstico, que depende de los hallazgos de la imagen",
+          "C": "Sí, las masas redondas a esa edad siempre son benignas",
+          "D": "Sí, los antecedentes genéticos de la paciente lo confirman"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "La edad influye en el riesgo, pero no determina el diagnóstico de una lesión concreta. Eso se decide con los hallazgos de la imagen. Además, en este caso no hay antecedentes genéticos documentados y la edad es simulada."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Qué categoría de evaluación BI-RADS se registra?",
+        "opciones": {
+          "A": "0",
+          "B": "3",
+          "C": "4",
+          "D": "2"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "BI-RADS 2 significa hallazgo benigno, sin necesidad de estudios adicionales."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      },
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      },
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      },
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      }
+    ],
+    "hallazgos": "Mamografía de mama izquierda (proyección MLO). Tejido mamario con densidades fibroglandulares dispersas. Se observa una masa de forma redonda con bordes bien definidos.",
+    "respuesta_correcta": "ignorar",
+    "recomendacion_ia_correcta": "Se trata de una masa redonda de bordes bien definidos y aspecto benigno; no requiere estudios adicionales y puede continuar con su tamizaje de rutina.",
+    "opcion_ia_incorrecta": "seguimiento",
+    "recomendacion_ia_incorrecta": "Aunque parece benigna, se recomienda un control por imagen en 6 meses para confirmar que se mantiene estable.",
+    "retroalimentacion": "Una masa redonda de bordes bien definidos tiene aspecto benigno (BI-RADS 2) y se maneja con el control de rutina. El hallazgo se clasificó como benigno sin necesidad de volver a citar a la paciente.",
+    "fuente": "CBIS-DDSM, paciente P_00970 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  },
+  "caso_007": {
+    "id_caso": "caso_007",
+    "titulo": "Caso 007 · Mamografía de mama izquierda",
+    "descripcion_breve": "Mujer de 43 años (edad simulada) con un estudio de mamografía de la mama izquierda, tomado de la base de datos pública CBIS-DDSM, con una anomalía focal registrada.",
+    "lado": "izquierda",
+    "vistas": [
+      "CC",
+      "MLO"
+    ],
+    "dificultad": "medio",
+    "edad_simulada": 43,
+    "modelo_3d_ref": "mama_caso_007",
+    "datos_estudio": [
+      "Mama: izquierda",
+      "Proyecciones: CC y MLO",
+      "Fuente: CBIS-DDSM"
+    ],
+    "preguntas": [
+      {
+        "numero": 1,
+        "enunciado": "¿Cuál es la categoría de anomalía mamográfica codificada?",
+        "opciones": {
+          "A": "Calcificaciones",
+          "B": "Asimetría global",
+          "C": "Masa",
+          "D": "Distorsión arquitectural aislada"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "Una masa es una lesión con volumen, visible en más de una proyección. Las calcificaciones son puntos blancos pequeños."
+      },
+      {
+        "numero": 2,
+        "enunciado": "¿Qué lateralidad mamaria corresponde al hallazgo?",
+        "opciones": {
+          "A": "Izquierda",
+          "B": "Derecha",
+          "C": "Ambas",
+          "D": "No especificada"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "El lado se confirma siempre antes de interpretar el estudio. En este caso el hallazgo está en la mama izquierda."
+      },
+      {
+        "numero": 3,
+        "enunciado": "¿Cuál es el descriptor de forma de la masa registrado?",
+        "opciones": {
+          "A": "Redonda",
+          "B": "Irregular",
+          "C": "Ovalada",
+          "D": "Lobulada"
+        },
+        "respuesta_correcta": "D",
+        "explicacion": "Lobulada significa de contorno ondulado, con dos o tres lóbulos suaves."
+      },
+      {
+        "numero": 4,
+        "enunciado": "¿Cuál es el descriptor de márgenes de la masa registrado?",
+        "opciones": {
+          "A": "Espiculados",
+          "B": "Circunscritos",
+          "C": "Oscurecidos",
+          "D": "Indistintos"
+        },
+        "respuesta_correcta": "B",
+        "explicacion": "Circunscrito significa de borde liso y nítido, bien separado del tejido que lo rodea. La forma (lobulada) y el margen son características distintas."
+      },
+      {
+        "numero": 5,
+        "enunciado": "¿Qué proyecciones mamográficas constan en el registro seleccionado?",
+        "opciones": {
+          "A": "Solo CC",
+          "B": "Solo MLO",
+          "C": "CC y MLO",
+          "D": "Ninguna"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "El estudio estándar usa dos proyecciones: la craneocaudal (CC) y la mediolateral oblicua (MLO). En este caso constan ambas."
+      },
+      {
+        "numero": 6,
+        "enunciado": "¿Qué dato demográfico NO puede atribuirse como real a esta paciente con los archivos disponibles?",
+        "opciones": {
+          "A": "Lateralidad izquierda",
+          "B": "Morfología lobulada",
+          "C": "Edad de la paciente",
+          "D": "Las proyecciones CC y MLO"
+        },
+        "respuesta_correcta": "C",
+        "explicacion": "La edad no figura en el dataset, así que no puede atribuirse como un dato real a la paciente. Si se usa, debe marcarse como simulada."
+      },
+      {
+        "numero": 7,
+        "enunciado": "¿Qué categoría de evaluación BI-RADS se consigna?",
+        "opciones": {
+          "A": "3",
+          "B": "0",
+          "C": "4",
+          "D": "5"
+        },
+        "respuesta_correcta": "A",
+        "explicacion": "BI-RADS 3 significa probablemente benigno: se maneja con seguimiento por imagen a corto plazo."
+      }
+    ],
+    "enunciado_decision": "Con lo observado, ¿cuál es la conducta clínica más adecuada para esta paciente?",
+    "opciones_decision": [
+      {
+        "valor": "estudio_adicional",
+        "texto": "Estudios de imagen adicionales (proyecciones focalizadas, ecografía)"
+      },
+      {
+        "valor": "seguimiento",
+        "texto": "Seguimiento por imagen a corto plazo (6 meses)"
+      },
+      {
+        "valor": "biopsiar",
+        "texto": "Biopsia guiada por imagen"
+      },
+      {
+        "valor": "ignorar",
+        "texto": "Control de rutina (continuar el tamizaje)"
+      }
+    ],
+    "hallazgos": "Mamografía de mama izquierda (proyecciones CC y MLO). Tejido mamario con densidades fibroglandulares dispersas. Se observa una masa de contorno lobulado con bordes bien definidos.",
+    "respuesta_correcta": "seguimiento",
+    "recomendacion_ia_correcta": "La masa lobulada de bordes bien definidos es probablemente benigna; se recomienda seguimiento por imagen a corto plazo.",
+    "opcion_ia_incorrecta": "ignorar",
+    "recomendacion_ia_incorrecta": "La masa tiene aspecto benigno y no necesita controles adicionales; puede continuar con su tamizaje de rutina.",
+    "retroalimentacion": "Una masa lobulada de bordes bien definidos es probablemente benigna (BI-RADS 3): la conducta es seguimiento a corto plazo. En este caso, la patología confirmó que era benigna.",
+    "fuente": "CBIS-DDSM, paciente P_00119 (Lee et al., 2016; TCIA; CC BY 3.0)"
+  }
+}

@@ -1,0 +1,41 @@
+.cases_container{
+    display: grid;
+    grid-template-columns: minmax(0, 750px) minmax(260px, 320px);
+    align-items: start;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.detail_container{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #101A3D;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.detail_container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+
+.start_sim {
+    display: flex;
+    justify-self: center;
+    background-color: #E8177B;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    color: #ffffff;
+    box-shadow: 0 2px 5px #FFC1DA;
+    cursor: pointer; 
+}
+
+.start_sim:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

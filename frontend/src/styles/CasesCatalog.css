@@ -1,0 +1,129 @@
+/*Cases Page*/
+.content {
+    flex: 1;
+    padding: 0;
+    min-width: 0;
+    color: #000000;
+    margin: 10px;
+}
+
+/*Cases Catalog*/
+.catalog_container {
+    width: 100%;
+    max-width: 750px;
+    min-width: 0;
+}
+
+.cases_catalog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-bottom: 16px;
+    gap: 10px;
+    color: #ffffff;
+    font-size: small;
+}
+
+/*Cases Card*/
+.card {
+    padding: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    scroll-snap-align: center;
+    background-color: #0B1230;
+    width: auto;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    display: flex;
+    justify-self: center;
+}
+
+.detail_button{
+    display: flex;
+    justify-self: center;
+    color: #ffffff;
+    background-color: #e6397e;
+    border: 1px solid #FFC1DA;
+    border-radius: 12px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+/*Case Catalog*/
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carousel button {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #0b123099;
+    cursor: pointer;
+}
+
+.carousel button[aria-pressed="true"]{
+    background-color: #0B1230;
+}
+
+.carousel button:focus-visible {
+    outline: 2px solid #0B1230;
+    outline-offset: 4px;
+}
+
+.catalog_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.buttons_left_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: none;
+    background-color: transparent;
+    color: #e6397e;
+    cursor: pointer;
+}
+
+.buttons_left_right:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.buttons_left_right:focus-visible{
+    outline: 2px solid #0B1230;
+    outline-offset: 4px;
+}
+
+/*Ajuste de pantalla*/
+@media (max-width: 900px) {
+  .cases_catalog {
+    display: block;
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cases_container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

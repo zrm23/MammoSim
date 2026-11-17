@@ -1,0 +1,72 @@
+/*Avatar profile (Inicial del usuario)*/
+.user_avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-weight: bolder;
+    font-size: x-large;
+    color: #101A3D;
+}
+
+/*PageHeader*/
+
+.header_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 5px;
+    color: #FFFFFF;
+
+    h1 {
+        margin: 0 0 8px;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.profile_container {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/*User Profile Info*/
+.user_profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: #101A3D;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 250px;
+}
+
+.user_profile_info h2{
+    margin: 0;
+    font-size: medium;
+}
+
+.user_profile_info p {
+    font-size: small;
+}
+
+/*Ajuste pantalla*/
+@media (max-width: 700px) {
+  .header_container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8px;
+  }
+}
+
+@media (max-width: 700px) {
+    .user_profile{
+        width: 200px;
+    }
+}
