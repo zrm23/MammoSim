@@ -87,9 +87,26 @@ public class LabSceneManager : MonoBehaviour
     }
 
     void AlEvaluar(ResultadoCasoRes r)
+{
+    Debug.Log("[MammoSim] Resultado final recibido: " +
+              JsonUtility.ToJson(r));
+
+    if (robot == null) return;
+
+    if (r.siguio_ia && !r.acierto_final)
     {
-        if (robot != null) robot.Reaccionar(r.acierto_final ? EstadoRobot.Feliz : EstadoRobot.Triste, 4f);
+        // El estudiante siguió una recomendación incorrecta.
+        // El tutor no muestra tristeza por su propio error.
+        robot.Reposo();
     }
+    else
+    {
+        robot.Reaccionar(
+            r.acierto_final ? EstadoRobot.Feliz : EstadoRobot.Triste,
+            4f
+        );
+    }
+}
 
     void AlTerminar()
     {
@@ -140,15 +157,20 @@ public class LabSceneManager : MonoBehaviour
     }
 #endif
 
-    static GameObject Marcador(string referencia)
-    {
-        var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        go.name = "Marcador_" + referencia;
-        go.transform.localScale = new Vector3(1f, 0.7f, 1f);
-        var col = go.GetComponent<Collider>();
-        if (col != null) Destroy(col);
-        return go;
-    }
+    
+static GameObject Marcador(string referencia)
+{
+    var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
+    go.name = "Marcador_" + referencia;
+    go.transform.localScale = new Vector3(1f, 0.7f, 1f);
+
+    // CreatePrimitive ya incluye Sphere Collider.
+    // Lo conservamos para permitir la rotación con el mouse.
+
+    return go;
+}
+
 
     void LimpiarModelo()
     {
